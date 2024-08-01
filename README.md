@@ -17,8 +17,7 @@ Run this software in virtual machines and under no circumstances send it to othe
 
 ## DESCRIPTION
 
-This malware has 9 payloads + Interactive Mandelbrot Fractal with 5 thousand Iterations (The 5 thousand Mandelbrot may crash, so I made a version with one thousand).
-NOTE: On a Virtual Machine, the computer remains usable, but on a Real Device, the Mandelbrot uses 100% of the CPU.
+This malware has a Special Mouse Interactive Payload in the Last Effect.
 
 
 (Português)
@@ -40,6 +39,5 @@ Execute este software em máquinas virtuais e, em hipótese alguma, envie para o
 
 ## DESCRIÇÃO
 
-Este malware possui 9 payloads + Mandelbrot Fractal Interativo com 5 mil Interações (O Mandelbrot de 5 mil pode travar a Máquina Virtual então eu fiz uma versão de mil para ser mais Suave)
-OBS: em máquina Virtual o Computador fica normal de Uso, mais em um Dispositivo Real o Mandelbrot Usa 100% da CPU.
+Este malware possui um Payload Especial Interativo com o Mouse no Ultimo Efeito.
 
