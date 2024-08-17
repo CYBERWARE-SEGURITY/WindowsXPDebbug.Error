@@ -7,45 +7,44 @@ HSCREEN equ 200
 main:
     call setup
     call drawStars
-    jmp $        ; Loop infinito
+    jmp $        ; Infinite loop
 
-; Configuração inicial
+; Initial setup
 setup:
-    mov ah, 0x00    ; Função BIOS para alterar modo gráfico
-    mov al, 0x13    ; Modo 13h (320x200 em 256 cores)
-    int 0x10        ; Chama a BIOS
+    mov ah, 0x00    ; BIOS function to change graphics mode
+    mov al, 0x13    ; Mode 13h (320x200 in 256 colors)
+    int 0x10        ; Call BIOS
 
-    push 0xA000     ; Define o segmento de vídeo para A000h
+    push 0xA000     ; Set video segment to A000h
     pop es
 
-    xor al, al      ; Limpa AL (cor inicial)
-    xor bx, bx      ; Página de vídeo
+    xor al, al      ; Clear AL (initial color)
+    xor bx, bx      ; Video page
 
     ret
 
-; Sub-rotina para desenhar estrelas piscando
 drawStars:
-    mov cx, WSCREEN / 2    ; Define o centro horizontal da tela
-    mov dx, HSCREEN / 2    ; Define o centro vertical da tela
+    mov cx, WSCREEN / 2    ; Set horizontal center of screen
+    mov dx, HSCREEN / 2    ; Set vertical center of screen
 
 drawLoop:
-    mov ax, cx      ; Coloca coordenada X em AX
-    add ax, dx      ; Adiciona coordenada Y
-    xor ah, ah      ; Limpa AH
+    mov ax, cx      ; Place X coordinate in AX
+    add ax, dx      ; Add Y coordinate
+    xor ah, ah      ; Clear AH
 
-    xor bl, bl      ; Cor 0 (preto)
-    int 0x10        ; Desenha pixel
+    xor bl, bl      ; Color 0 (black)
+    int 0x10        ; Draw pixel
 
-    inc cx          ; Avança horizontalmente
-    cmp cx, WSCREEN ; Verifica se chegou ao final da linha
-    jl drawLoop     ; Repete até o fim da linha
+    inc cx          ; Move horizontally
+    cmp cx, WSCREEN ; Check if end of line reached
+    jl drawLoop     ; Repeat until end of line
 
-    inc dx          ; Avança verticalmente
-    cmp dx, HSCREEN ; Verifica se chegou ao final da tela
-    jl drawStars    ; Repete até o fim da tela
+    inc dx          ; Move vertically
+    cmp dx, HSCREEN ; Check if end of screen reached
+    jl drawStars    ; Repeat until end of screen
 
     ret
 
-; Assinatura do MBR
+; MBR signature
 times 510 - ($ - $$) db 0
 dw 0xAA55
