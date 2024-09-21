@@ -1,3 +1,6 @@
+## THIS MALWARE ONLY WORKS ON WIN 10 & 11 (Don't ask me why I did it like that :D)
+## ESSE MALWARE FUNCIONA APENAS EM WIN 10 & 11 (Não me Pergunte por que eu fiz assim :D)
+
 (English)
 ## WindowsXPDebbug.Error v1.0 - Developed by CYBERWARE
 
